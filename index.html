@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Решение алгоритмической задачи</title>
+  </head>
+
+  <body>
+    <ul align="center">
+      <li>
+        <a href="event.html" target="_blank">Изменяем кириллицу на латиницу</a>
+      </li>
+      <li>
+        <a href="passport.html" target="_blank">Считываем информацию из DOM</a>
+      </li>
+      <li>
+        <a href="personal_data.html" target="_blank"
+          >Форма отправки контактных данных</a
+        >
+      </li>
+    </ul>
+
+    <h1 align="center">Решение алгоритмической задачи №1018.</h1>
+    <h3 align="center">
+      Определение, является ли год високосным и к какому веку он относится
+    </h3>
+
+    <form name="YearForm" align="center">
+      <p>Введите год: <input type="number" name="year" value="2025" /></p>
+      <p><input type="button" value="Вычислить" onclick="checkYear()" /></p>
+    </form>
+
+    <div
+      id="result"
+      align="center"
+      style="margin-top: 20px; font-size: 18px; font-weight: bold"
+    ></div>
+
+    <script>
+      function checkYear() {
+        // значение из формы
+        let y = parseInt(document.YearForm.year.value);
+        let isLeap, century;
+
+        // проверка високосного года по делению на 4
+        if ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) {
+          isLeap = "високосный";
+        } else {
+          isLeap = "не високосный";
+        }
+
+        // век
+        century = Math.ceil(y / 100);
+
+        // результат
+        document.getElementById("result").innerHTML =
+          "Год " +
+          y +
+          " — " +
+          isLeap +
+          ".<br>Относится к " +
+          century +
+          "-му веку.";
+      }
+    </script>
+  </body>
+</html>

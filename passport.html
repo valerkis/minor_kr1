@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM_JS. Считываем информацию из DOM</title>
+  </head>
+  <body>
+    <h1>DOM_JS. Считываем информацию из DOM</h1>
+
+    <ul align="center">
+      <li>
+        <a href="event.html" target="_blank">Изменяем кириллицу на латиницу</a>
+      </li>
+      <li><a href="index.html" target="_blank">Решение задачи</a></li>
+      <li>
+        <a href="personal_data.html" target="_blank"
+          >Форма отправки контактных данных</a
+        >
+      </li>
+    </ul>
+
+    <p>Фамилия: <span>Мазаева</span></p>
+    <p>Имя: <span>Валерия</span></p>
+    <p>Год рождения: <span>2002</span></p>
+
+    <button id="getData">Считать информацию</button>
+
+    <p id="result"></p>
+
+    <script>
+      document.getElementById("getData").onclick = function () {
+        let surname =
+          document.getElementsByTagName("p")[0].childNodes[1].innerText;
+        let name =
+          document.getElementsByTagName("p")[1].childNodes[1].innerText;
+        let year =
+          document.getElementsByTagName("p")[2].childNodes[1].innerText;
+
+        document.getElementById("result").innerText =
+          "Фамилия: " + surname + "\nИмя: " + name + "\nГод рождения: " + year;
+      };
+    </script>
+
+    <img width="100%" src="img/screen.png" />
+  </body>
+</html>
